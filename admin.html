@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h1>🔧 Admin Panel (Network Mode)</h1>
+        
+        <div class="panel">
+            <div class="section">
+                <h2>Current Participants (Read-Only)</h2>
+                <p>Winner set in <code>data.json</code>: <strong id="selectedDisplay">Waiting for data...</strong></p>
+                
+                <h2 style="margin-top: 20px;">Current List (from Server)</h2>
+                <div class="all-participants" id="allParticipants"></div>
+                
+                <button class="confirm-btn" id="refreshBtn">Refresh Data</button> 
+            </div>
+            
+            <div class="section" style="background: #fdd; border: 2px solid #c00;">
+                <h2>Manual Server Control Required</h2>
+                <p>To change the list or select a winner, you must perform these steps **on the Server Computer (10.10.5.28)**:</p>
+                <ol style="text-align: left; padding-left: 20px; font-weight: bold;">
+                    <li>Open the **<code>data.json</code>** file in a text editor (Notepad, VS Code).</li>
+                    <li>**To change names:** Edit the <code>"participants"</code> array.</li>
+                    <li>**To set the winner:** Change the value of <code>"selectedWinner"</code> to the desired name (e.g., <code>"selectedWinner": "Jasmina"</code>).</li>
+                    <li>**Save** the <code>data.json</code> file.</li>
+                    <li>The Display computer will update automatically.</li>
+                </ol>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Picker</a>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
